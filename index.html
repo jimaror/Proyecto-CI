@@ -4,143 +4,118 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aprendiendo Git</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, sans-serif;
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(120deg, #2563eb, #7c3aed);
-      min-height: 100vh;
-      padding: 30px 20px;
-    }
-
-    .contenedor {
-      max-width: 750px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.25);
-      overflow: hidden;
+      background-color: #f8f8f8;
+      color: #333;
+      line-height: 1.6;
     }
 
     .cabecera {
-      background: linear-gradient(90deg, #1d4ed8, #4f46e5);
+      background-color: #1a2435;
       color: white;
-      padding: 35px;
       text-align: center;
+      padding: 40px 20px;
     }
 
     .cabecera h1 {
-      font-size: 32px;
+      font-size: 34px;
       margin-bottom: 8px;
     }
 
     .cabecera p {
+      color: #e09f6e;
       font-size: 18px;
-      opacity: 0.9;
     }
 
-    .contenido {
-      padding: 35px;
+    .contenedor {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 20px;
     }
 
-    .seccion {
-      margin-bottom: 35px;
+    .tema {
+      background: white;
+      border-radius: 10px;
+      padding: 25px 30px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
     }
 
-    .seccion h2 {
-      font-size: 22px;
-      color: #1d4ed8;
-      border-left: 5px solid #f59e0b;
-      padding-left: 12px;
+    .tema:hover {
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    .tema h2 {
+      color: #b34028;
+      font-size: 20px;
       margin-bottom: 15px;
     }
 
-    .seccion p {
+    .tema p, .tema ol {
       font-size: 16px;
-      color: #374151;
-      line-height: 1.8;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
-    .caja-codigo {
-      background: #1f2937;
-      color: #6ee7b7;
-      padding: 18px;
-      border-radius: 10px;
+    .tema ol {
+      padding-left: 22px;
+    }
+
+    .codigo {
+      background-color: #222831;
+      color: #7ee787;
+      padding: 8px 14px;
+      border-radius: 6px;
       font-family: monospace;
-      font-size: 15px;
-      margin: 15px 0;
-      line-height: 1.7;
-    }
-
-    .estado {
-      padding: 12px 15px;
-      margin: 8px 0;
-      border-radius: 10px;
-      font-weight: 600;
-    }
-
-    .untracked  { background: #fef3c7; color: #92400e; }
-    .modified   { background: #fee2e2; color: #991b1b; }
-    .staged     { background: #d1fae5; color: #065f46; }
-    .committed  { background: #e0e7ff; color: #3730a3; }
-
-    .pie {
-      background: #f3f4f6;
-      text-align: center;
-      padding: 20px;
-      color: #6b7280;
-      font-weight: 600;
+      display: inline-block;
+      margin-top: 5px;
     }
   </style>
 </head>
 <body>
+  <header class="cabecera">
+    <h1>Aprendiendo Git</h1>
+    <p>Mi bitácora del curso de Git y GitHub</p>
+  </header>
+
   <div class="contenedor">
-    <div class="cabecera">
-      <h1>📘 Aprendiendo Git</h1>
-      <p>Bitácora personal del curso de Git y GitHub</p>
-    </div>
+    <section class="tema">
+      <h2>2.1 Instalación y configuración</h2>
+      <p>Instalé Git y configuré mi identidad.</p>
+      <div class="codigo">git config --global user.name</div>
+    </section>
 
-    <div class="contenido">
-      <div class="seccion">
-        <h2>2.1 Instalación y configuración</h2>
-        <p>✅ Instalé Git en mi computadora y configuré mi identidad para poder trabajar.</p>
-        
-        <div class="caja-codigo">
-git config --global user.name "Tu Nombre"<br>
-git config --global user.email "tu@email.com"
-        </div>
-        
-        <p>Para verificar que quedó bien configurado:</p>
-        <div class="caja-codigo">
-git config --list
-        </div>
-      </div>
+    <section class="tema">
+      <h2>2.2 Mi primer repositorio</h2>
+      <p>Con git init creé la carpeta oculta .git.</p>
+      <p>Estados: untracked, modified, staged y unmodified.</p>
+    </section>
 
-      <div class="seccion">
-        <h2>2.2 Mi primer repositorio</h2>
-        <p>✅ Con el comando <strong style="color:#2563eb">git init</strong> creé un repositorio nuevo, que genera automáticamente la carpeta oculta <strong>.git</strong> donde Git guarda todo el historial.</p>
-        
-        <h3 style="color:#d97706; margin:20px 0 10px;">Estados de los archivos en Git:</h3>
-        
-        <div class="estado untracked">🔍 Untracked — El archivo es nuevo, Git no lo sigue todavía.</div>
-        <div class="estado modified">✏️ Modified — El archivo ha sido cambiado pero no guardado.</div>
-        <div class="estado staged">📥 Staged — El archivo está listo para ser confirmado.</div>
-        <div class="estado committed">✅ Committed — El cambio ya está guardado en el historial.</div>
-      </div>
-    </div>
+    <section class="tema">
+      <h2>2.3 Ciclo de vida</h2>
+      <ol>
+        <li>Editar el archivo</li>
+        <li>Revisar con git status</li>
+        <li>Preparar con git add</li>
+        <li>Guardar con git commit</li>
+      </ol>
+    </section>
 
-    <div class="pie">
-      💻 Curso de Git y GitHub — Managua, Nicaragua 🇳🇮
-    </div>
+    <!-- ==== SECCIÓN NUEVA 3.1 ==== -->
+    <section class="tema">
+      <h2>3.1 Ramas</h2>
+      <p>Una rama es un puntero a un commit: trabajo en paralelo sin tocar main.</p>
+      <div class="codigo">git switch -c feature/nueva-idea</div>
+    </section>
+    <!-- ==== FIN SECCIÓN NUEVA ==== -->
   </div>
 </body>
 </html>
