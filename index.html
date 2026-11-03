@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aprendiendo GIT</title>
+  <title>Aprendiendo Git</title>
   <style>
     * {
       margin: 0;
@@ -18,42 +18,42 @@
       line-height: 1.6;
     }
 
-    .cabecera {
+    header {
       background-color: #1a2435;
       color: white;
       text-align: center;
       padding: 40px 20px;
     }
 
-    .cabecera h1 {
+    header h1 {
       font-size: 34px;
       margin-bottom: 8px;
     }
 
-    .cabecera .alumno {
+    .nombre {
       color: #e09f6e;
       font-size: 18px;
       margin-bottom: 6px;
     }
 
-    .cabecera .curso {
+    .curso {
       font-size: 15px;
       color: #f0d9c7;
       margin-bottom: 6px;
     }
 
-    .cabecera .profesor {
+    .profesor {
       font-size: 15px;
       color: #dddddd;
     }
 
-    .contenedor {
+    main {
       max-width: 800px;
       margin: 30px auto;
       padding: 0 20px;
     }
 
-    .tema {
+    section {
       background: white;
       border-radius: 10px;
       padding: 25px 30px;
@@ -61,22 +61,22 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
 
-    .tema h2 {
+    h2 {
       color: #b34028;
       font-size: 20px;
       margin-bottom: 15px;
     }
 
-    .tema p, .tema ol {
+    p, ol {
       font-size: 16px;
       margin-bottom: 10px;
     }
 
-    .tema ol {
+    ol {
       padding-left: 22px;
     }
 
-    .codigo {
+    code {
       background-color: #222831;
       color: #7ee787;
       padding: 6px 12px;
@@ -85,30 +85,37 @@
       display: inline-block;
       margin-top: 5px;
     }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
-  <header class="cabecera">
+  <header>
     <h1>Aprendiendo Git</h1>
-    <p class="alumno">Jimmy Marquez Orozco</p>
+    <p class="nombre">Cristopher Larios</p>
     <p class="curso">Mi bitácora del curso de Git y GitHub</p>
     <p class="profesor">Roderick David Zapata</p>
   </header>
 
-  <div class="contenedor">
-    <section class="tema">
+  <main>
+    <section>
       <h2>2.1 Instalación y configuración</h2>
       <p>Instalé Git y configuré mi identidad.</p>
-      <div class="codigo">git config --global user.name</div>
+      <code>git config --global user.name</code>
     </section>
 
-    <section class="tema">
+    <section>
       <h2>2.2 Mi primer repositorio</h2>
       <p>Con git init creé la carpeta oculta .git.</p>
       <p>Estados: untracked, modified, staged y unmodified.</p>
     </section>
 
-    <section class="tema">
+    <section>
       <h2>2.3 Ciclo de vida</h2>
       <ol>
         <li>Editar el archivo</li>
@@ -118,11 +125,27 @@
       </ol>
     </section>
 
-    <section class="tema">
+    <section>
       <h2>2.4 Exclusión con .gitignore</h2>
       <p>Ignoro secretos, registros y archivos temporales.</p>
-      <div class="codigo">*.log</div>
+      <code>*.log</code>
     </section>
-  </div>
+
+    <section>
+      <h2>3.1 Ramas</h2>
+      <p>Una rama es una línea de trabajo independiente que apunta a un commit.</p>
+      <code>git switch -c feature/nueva-idea</code>
+    </section>
+
+    <section>
+      <h2>3.2 Fusiones y conflictos</h2>
+      <p>Un conflicto aparece cuando dos ramas cambian la misma línea.</p>
+      <code>git merge feature/seccion-3-2</code>
+    </section>
+  </main>
+
+  <footer>
+    Hecho por Cristopher Larios con Git 💛
+  </footer>
 </body>
 </html>
