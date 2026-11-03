@@ -30,9 +30,21 @@
       margin-bottom: 8px;
     }
 
-    .cabecera p {
+    .cabecera .alumno {
       color: #e09f6e;
       font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .cabecera .curso {
+      font-size: 15px;
+      color: #f0d9c7;
+      margin-bottom: 6px;
+    }
+
+    .cabecera .profesor {
+      font-size: 15px;
+      color: #dddddd;
     }
 
     .contenedor {
@@ -47,11 +59,6 @@
       padding: 25px 30px;
       margin-bottom: 20px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      transition: all 0.3s ease;
-    }
-
-    .tema:hover {
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
     }
 
     .tema h2 {
@@ -72,7 +79,7 @@
     .codigo {
       background-color: #222831;
       color: #7ee787;
-      padding: 8px 14px;
+      padding: 6px 12px;
       border-radius: 6px;
       font-family: monospace;
       display: inline-block;
@@ -83,7 +90,9 @@
 <body>
   <header class="cabecera">
     <h1>Aprendiendo Git</h1>
-    <p>Mi bitácora del curso de Git y GitHub</p>
+    <p class="alumno">Jimmy Marquez Orozco</p>
+    <p class="curso">Mi bitácora del curso de Git y GitHub</p>
+    <p class="profesor">Roderick David Zapata</p>
   </header>
 
   <div class="contenedor">
@@ -109,13 +118,11 @@
       </ol>
     </section>
 
-    <!-- ==== SECCIÓN NUEVA 3.1 ==== -->
     <section class="tema">
-      <h2>3.1 Ramas</h2>
-      <p>Una rama es un puntero a un commit: trabajo en paralelo sin tocar main.</p>
-      <div class="codigo">git switch -c feature/nueva-idea</div>
+      <h2>2.4 Exclusión con .gitignore</h2>
+      <p>Ignoro secretos, registros y archivos temporales.</p>
+      <div class="codigo">*.log</div>
     </section>
-    <!-- ==== FIN SECCIÓN NUEVA ==== -->
   </div>
 </body>
 </html>
