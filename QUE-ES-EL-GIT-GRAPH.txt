@@ -1,0 +1,76 @@
+╔══════════════════════════════════════════════════════════════════╗
+║                    ¿QUÉ ES EL "GIT GRAPH"?                       ║
+╚══════════════════════════════════════════════════════════════════╝
+
+Hay DOS cosas distintas que se llaman "graph":
+
+╔══════════════════════════════════════════════════════════════════╗
+║ 1. LA EXTENSIÓN DE VS CODE (la que tenés instalada)            ║
+║                                                                  ║
+║    - Es un panel visual dentro de VS Code                        ║
+║    - Muestra el historial como un diagrama con cajitas          ║
+║    - Se abre desde el ícono de Git (control de versiones)       ║
+║    - Sirve para NAVEGAR, no para la evidencia de la tarea       ║
+║                                                                  ║
+║    ⚠️ La guía NO pide esto. Pide el comando de terminal.         ║
+╚══════════════════════════════════════════════════════════════════╝
+
+╔══════════════════════════════════════════════════════════════════╗
+║ 2. EL "GIT GRAPH" DE LA TERMINAL (lo que te piden)              ║
+║                                                                  ║
+║    - Es el DIBUJO que sale en la terminal con el flag --graph   ║
+║    - Los caracteres  *  |/  |\  |*  son el árbol de ramas       ║
+║    - Se captura desde la terminal (Win + Shift + S)              ║
+║                                                                  ║
+║    ✅ ESTE es el que necesitás para la tarea.                    ║
+╚══════════════════════════════════════════════════════════════════╝
+
+
+� ═══════════════════════════════════════════════════════════════════
+#  CÓMO HACERLO PASO A PASO
+# ═══════════════════════════════════════════════════════════════════
+
+# 1) Click DENTRO de la terminal de VS Code (abajo, al lado de
+#    "Problemas / Salida / Consola de depuración / Terminal")
+#    -> es la pantalla negra con "PS C:\Users\JMarkz>"
+
+# 2) Borra la pantalla para que se vea limpio:
+cls
+
+# 3) Escribí este comando y presioná ENTER:
+git log --oneline --graph --all --decorate
+
+# 4) Te sale el dibujo:
+
+#    * a033d07 (HEAD -> main, origin/main) Limpia index.html
+#    * 6cf3f76 (tag: v1.0) Agrega seccion de historial
+#    * aee4f69 Revert "Prueba fondo rojo"
+#    | * 7970c9d (feature/css) CSS: tamaño de código
+#    |/
+#    | * d9a39c8 (feature/seccion-3-2) Agrega sección 3.2
+#    |/
+#    *   98ece63 Merge feature/footer (--no-ff)
+#    |\
+#    | * 12b85ce (feature/footer) Nuevo pie de página
+#    |/
+#    * 5b96c55 Nuevo pie de página
+#    ...
+
+#    Esos |  y /  son las ramas que se separan y se vuelven a unir.
+
+# 5) CAPTURA:  Win + Shift + S  -> dibuja el rectángulo -> Enter
+#    Se copia al portapapeles. Abrí Paint, Ctrl+V, Ctrl+S
+#    Guardá como:  01-grafo.png  en la carpeta  capturas  del Desktop
+
+
+# ═══════════════════════════════════════════════════════════════════
+#  ¿Y LA EXTENSIÓN DE VS CODE? (opcional, para que la veas)
+# ═══════════════════════════════════════════════════════════════════
+#
+#  - Click en el ícono de Git (la ramita) en la barra izquierda
+#    de VS Code (abajo, junto a "CUENTAS" / el ícono de persona)
+#  - Abajo te sale un panel con 3 pestañitas
+#  - Click en la pestañita que dice "GRAPH"
+#  - Ahi ves el historial dibujado
+#
+#  Sirve para explorar. Para la TAREA necesitás la terminal.
